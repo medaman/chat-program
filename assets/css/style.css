@@ -18,6 +18,29 @@ body {
   width:100%;
 }
 
+#room-selection {
+  background-color: salmon;
+  padding-bottom:4vh;
+  height:100vh;
+  position: absolute;
+  left: 0%;
+  padding:0 10%;
+  z-index:90;
+  width:100%;  
+}
+
+#rooms {
+  width:70%;
+  margin:auto;
+  background-color:white;
+  overflow:auto;
+  height:80vh;
+}
+
+.room-buttons {
+  margin:1vh 2%;
+}
+
 .avatar {
   width:100%;
   cursor: pointer;

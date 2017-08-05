@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Scissors - Multiplayer</title>
+  <title>Chat Rooms</title>
 
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -20,11 +20,16 @@
 <body>
   <div id="start-screen" class="container">
     <h1>Enter your Name</h1>
-    <input id="char-name">
+    <input id="char-name" autofocus autocomplete="off">
     <h1>Select Avatar</h1>
     <div id="avatar-options">
     </div>
     <div id="start-comment"></div>
+  </div>
+
+  <div id="room-selection" class ="container">
+    <h1>Select Room</h1>
+    <div id="rooms"></div>
   </div>
 
   <div id="game-area" class="container">
@@ -56,10 +61,13 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="row">Chat</div>
-        <div id="chat-area" class="row"></div>
+        <div class="row">
+          <div class="col-xs-10" id="chat-area"></div>
+          <div class="col-xs-2" id="people-in-room"></div>
+        </div>
         <div id="chat-typing" class="row">
           <form>
-            <input type="text" id="chat-text">
+            <input type="text" id="chat-text"  autocomplete="off">
             <input type="submit" name="Submit" id="submit-chat">
           </form>
         </div>
