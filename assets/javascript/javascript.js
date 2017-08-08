@@ -64,13 +64,6 @@ $(document).ready(function() {
     });
   }
 
-/*
-  $(document).on("click", ".sitDown", function() {
-    database.ref("game"+roomNumber).
-    placeAvatar(myAvatar, "opponent");
-  }*/
-
-
   $("#submit-chat").on("click", function() {
     event.preventDefault();
     var chatText = $("#chat-text").val().trim();
@@ -84,25 +77,22 @@ $(document).ready(function() {
       });
     }
     $("#chat-text").val("");
-  })
+  });
 
   $("#rooms").empty();
   for(var i=1; i<=9; i++) {
     var newDiv = $("<div>");
-    var leftSeat = createButton("Left");
-    var rightSeat = createButton("Right");
+    var joinChat = createButton("Join");
     newDiv.html("Room number: " + i);
-    newDiv.append(leftSeat);
-    newDiv.append(rightSeat);
+    newDiv.append(joinChat);
     $("#rooms").append(newDiv);
   }
 
-  function createButton(side) {
+  function createButton(join) {
     var newButton = $("<button>");
     newButton.addClass("btn btn-default room-buttons");
     newButton.attr("value", i);
-    newButton.attr("side", side);
-    newButton.text(side + " Side");
+    newButton.text("Join Room");
     return newButton;
   }
 
@@ -117,10 +107,7 @@ $(document).ready(function() {
     roomNumber = $(this).attr("value");
     database.ref("room" + roomNumber).set({ 
       latestChat: ["",""]
-    })
-    database.ref("room-info").set({
-      numPlayers:
-    })
+    });
     chatUpdater();
     disconnectPlayer();
   });
